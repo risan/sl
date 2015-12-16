@@ -1,0 +1,25 @@
+{
+  "name": "risan/sl",
+  "type": "library",
+  "description": "HTTP client library for sl.se, Stockholm public transportation API.",
+  "keywords": ["sl.se", "stockholm", "transportation"],
+  "homepage": "https://github.com/risan/sl",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Risan Bagja Pradana",
+      "email": "risanbagja@gmail.com",
+      "homepage": "https://github.com/risan",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Sl\\": "src/"
+    }
+  },
+  "require": {
+    "guzzlehttp/guzzle": "^6.1",
+    "illuminate/support": "^5.1"
+  }
+}
