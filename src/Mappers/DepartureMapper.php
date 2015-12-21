@@ -16,6 +16,8 @@ class DepartureMapper implements Mapper
      */
     public function map(array $data)
     {
+        $data = $data['data'];
+
         $busses = $this->busses($data);
 
         $trains = $this->trains($data);

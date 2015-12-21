@@ -15,6 +15,7 @@ class StationMapper implements Mapper
      */
     public function map(array $data)
     {
+        $data = $data['data'];
         $stations = [];
 
         foreach ($data as $place) {
