@@ -65,7 +65,7 @@ class DepartureCollection extends Collection implements DepartureCollectionInter
      */
     public function lightRails()
     {
-        return $this->type('light rails');
+        return $this->type('light rail');
     }
 
     /**
@@ -75,6 +75,6 @@ class DepartureCollection extends Collection implements DepartureCollectionInter
      */
     public function ships()
     {
-        return $this->type('ships');
+        return $this->type('ship');
     }
 }
