@@ -6,18 +6,33 @@ use Psr\Http\Message\ResponseInterface;
 
 interface HttpClient {
     /**
-     * Send HTTP request.
+     * Get base uri.
      *
-     * @param  string $uri
-     * @return array
+     * @return string
      */
-    public function sendRequest($url);
+    public function baseUri();
 
     /**
-     * Parse response.
+     * Send HTTP GET request.
+     *
+     * @param string $uri
+     * @return Psr\Http\Message\ResponseInterface
+     */
+    public function get($uri);
+
+    /**
+     * Parse JSON response.
      *
      * @param  Psr\Http\Message\ResponseInterface $response
      * @return array
      */
-    public function parseResponse(ResponseInterface $response);
+    public function parseJsonResponse(ResponseInterface $response);
+
+    /**
+     * Send HTTP GET request and JSON response.
+     *
+     * @param string $uri
+     * @return array
+     */
+    public function getAndParseJson($uri);
 }

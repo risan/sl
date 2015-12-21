@@ -8,12 +8,21 @@ use Sl\Contracts\HttpClient as HttpClientInterface;
 
 class HttpClient extends Guzzle implements HttpClientInterface {
     /**
+     * Base uri.
+     *
+     * @var string
+     */
+    protected $baseUri;
+
+    /**
      * Create a new instance of HttpClient.
      *
      * @param string $baseUri
      */
     public function __construct($baseUri)
     {
+        $this->baseUri = $baseUri;
+
         parent::__construct([
             'base_uri' => $baseUri,
             'headers' => [
@@ -28,28 +37,47 @@ class HttpClient extends Guzzle implements HttpClientInterface {
     }
 
     /**
-     * Send HTTP request.
+     * Get base uri.
      *
-     * @param  string $uri
-     * @return array
+     * @return string
      */
-    public function sendRequest($uri)
+    public function baseUri()
     {
-        $response = $this->request('GET', $uri);
+        return $this->baseUri;
+    }
 
-        return $this->parseResponse($response);
+     /**
+     * Send HTTP GET request.
+     *
+     * @param string $uri
+     * @return Psr\Http\Message\ResponseInterface
+     */
+    public function get($uri)
+    {
+        return $this->request('GET', $uri);
     }
 
     /**
-     * Parse response.
+     * Parse JSON response.
      *
      * @param  Psr\Http\Message\ResponseInterface $response
      * @return array
      */
-    public function parseResponse(ResponseInterface $response)
+    public function parseJsonResponse(ResponseInterface $response)
     {
-        $body = json_decode($response->getBody(), 1);
+        return json_decode($response->getBody(), 1);
+    }
 
-        return $body['data'];
+    /**
+     * Send HTTP GET request and JSON response.
+     *
+     * @param string $uri
+     * @return array
+     */
+    public function getAndParseJson($uri)
+    {
+        $response = $this->get($uri);
+
+        return $this->parseJsonResponse($response);
     }
 }
