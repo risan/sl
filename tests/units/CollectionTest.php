@@ -18,7 +18,7 @@ class CollectionTest extends PHPUnit_Framework_TestCase {
     }
 
     /** @test */
-    function collection_can_create_from_raw_array()
+    function collection_can_be_instantiated_from_raw_array()
     {
         $fooCollection = Collection::fromArray($this->rawArray, new FooMapper);
 
@@ -28,8 +28,9 @@ class CollectionTest extends PHPUnit_Framework_TestCase {
             $this->assertInstanceOf(Foo::class, $foo);
         }
 
-        $this->assertEquals('bar', $fooCollection[0]->foo);
-        $this->assertEquals(123, $fooCollection[0]->baz);
+        $foo = $fooCollection[0];
+        $this->assertEquals('bar', $foo->foo);
+        $this->assertEquals(123, $foo->baz);
     }
 }
 
