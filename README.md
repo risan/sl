@@ -1,5 +1,10 @@
 # Stockholm Pulic Transport
 
+[![Build Status](https://img.shields.io/travis/risan/sl.svg?style=flat-square)](https://travis-ci.org/risan/sl)
+[![HHVM Tested](https://img.shields.io/hhvm/risan/sl.svg?style=flat-square)](https://travis-ci.org/risan/sl)
+[![Latest Stable Version](https://img.shields.io/packagist/v/risan/sl.svg?style=flat-square)](https://packagist.org/packages/risan/sl)
+[![License](https://img.shields.io/packagist/l/risan/sl.svg?style=flat-square)](https://packagist.org/packages/risan/sl)
+
 PHP HTTP client library for communicating with [sl.se](http://sl.se/)—a Stockholm public transportation website.
 
 ## Table of Contents
@@ -37,11 +42,11 @@ Or you may also add `risan\sl` package into your `composer.json` file like so:
 
 ```bash
 "require": {
-  "risan/sl": "*"
+  "risan/sl": "~1.0"
 }
 ```
 
-Then don't forget to run the following command to install this library:
+And don't forget to run the following composer command to install this library:
 
 ```bash
 composer install
@@ -49,7 +54,7 @@ composer install
 
 ## Basic Usage
 
-Here is some basic example about how to use this library:
+Here is some basic example to use this library:
 
 ```php
 <?php
@@ -60,41 +65,63 @@ require 'vendor/autoload.php';
 $sl = new Sl\Sl();
 
 // Search for station.
-// @return Sl\Collections\StationColection.
+// Will return Sl\Collections\StationColection.
 $stations = $sl->searchStation('Central Station');
 
 // Find for departures.
-// @return Sl\Collections\DepartureColection.
+// Will return Sl\Collections\DepartureColection.
 $departures = $sl->departuresFrom($stations->first());
 ```
 
 ## Search for Station
 
-To search for station, you may use the `searchStation()` method:
+To search for a station, you may use the `searchStation()` method:
 
 ```php
 $sl->searchStation(string $query);
 ```
 
-This method will perform a request to [sl.se](http://sl.se/) to search for a station that match the given `$query`. The return type is an instance of `Sl\Collections\StationCollection`, which is a collection of `Sl\Station` instances.
+For example, if you'd like to find all stations that match the `central` word, then your code will look like this:
 
-The `StationCollection` itself is a subclass of `Illuminate\Support\Collection`, so you may leverage the powerful feature of [Laravel's collection](http://laravel.com/docs/5.1).
+```php
+$sl = new Sl\Sl();
+
+$stations = $sl->searchStation('central');
+
+print_r($stations->toArray());
+```
+
+The `searchStation()` method will automatically perform a HTTP request to [sl.se](http://sl.se/) to search for stations that match the given `$query`. This method will return an instance of `Sl\Collections\StationCollection` class, which contains a collection of `Sl\Station` instances.
+
+The `StationCollection` class itself is a subclass of `Illuminate\Support\Collection`, so you may leverage the powerful feature of [Laravel's collection](http://laravel.com/docs/5.1).
 
 ## Find Departures
 
-To find departures, you may use the `departuresFrom()` method:
+You may also find departures from a specific station using `departuresFrom()` method:
 
 ```php
 $sl->departuresFrom(Sl\Station $station);
 ```
 
-This method will perform a request to [sl.se](http://sl.se/) to find a list of departures for a given `$station`. Note that method argument must be instance of `Sl\Station` class.
+This method will perform a HTTP request to [sl.se](http://sl.se/) website in order to find a list of departures for a given `$station`. Note that this method requires an argument that must be instance of `Sl\Station` class.
 
-This method will return an instance of `Sl\Collections\DepartureCollection` which is a collection of `Sl\Departure` instances. The `DepartureCollection` is also a subclass of `Illuminate\Support\Collection`.
+For example, if you need to find all departures from `Slussen` station, you can do the following:
+
+```php
+$sl = new Sl\Sl();
+
+$slussen = $sl->searchStation('slussen')->first();
+
+$departures = $sl->departuresFrom($slussen);
+
+print_r($departures->toArray());
+```
+
+The `$departures` will be an instance of `Sl\Collections\DepartureCollection` which hold a collection of `Sl\Departure` instances. The `DepartureCollection` is also a subclass of `Illuminate\Support\Collection`.
 
 ### Bus Departures
 
-You may only list the bus departures, by calling `busses()` method on `DepartureCollection` instance.
+To filter only the bus departures, call `busses` method:
 
 ```php
 $sl->departuresFrom(Sl\Station $station)->busses();
@@ -102,7 +129,7 @@ $sl->departuresFrom(Sl\Station $station)->busses();
 
 ### Train Departures
 
-You may only list the train (pendeltåg) departures, by calling `trains()` method on `DepartureCollection` instance.
+To filter only the train (pendeltåg) departures, call `trains()` method:
 
 ```php
 $sl->departuresFrom(Sl\Station $station)->trains();
@@ -110,7 +137,7 @@ $sl->departuresFrom(Sl\Station $station)->trains();
 
 ### Metro Departures
 
-You may only list the metro (tunnelbana) departures, by calling `metros()` method on `DepartureCollection` instance.
+To filter only the metro (tunnelbana) departures, call `metros()` method:
 
 ```php
 $sl->departuresFrom(Sl\Station $station)->metros();
@@ -118,7 +145,7 @@ $sl->departuresFrom(Sl\Station $station)->metros();
 
 ### Tram Departures
 
-You may only list the tram (spårvagn) departures, by calling `trams()` method on `DepartureCollection` instance.
+To filter only the tram (spårvagn) departures, call `trams()` method:
 
 ```php
 $sl->departuresFrom(Sl\Station $station)->metros();
@@ -126,7 +153,7 @@ $sl->departuresFrom(Sl\Station $station)->metros();
 
 ### Light Rail Departures
 
-You may only list the light rail (lokalbana) departures, by calling `lightRails()` method on `DepartureCollection` instance.
+To filter only the light rail (lokalbana) departures, call `lightRails()` method:
 
 ```php
 $sl->departuresFrom(Sl\Station $station)->lightRails();
@@ -134,7 +161,7 @@ $sl->departuresFrom(Sl\Station $station)->lightRails();
 
 ### Ship Departures
 
-You may only list the ship or boat departures, by calling `ships()` method on `DepartureCollection` instance.
+To filter only the ship or boat departures, call `ships()` method:
 
 ```php
 $sl->departuresFrom(Sl\Station $station)->ships();
