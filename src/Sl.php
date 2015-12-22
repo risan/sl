@@ -54,7 +54,7 @@ class Sl implements PublicTransportSystem {
      */
     public function searchStation($query)
     {
-        $data = $this->httpClient()->sendRequest(self::SEARCH_STATION_URI . $query);
+        $data = $this->httpClient()->getAndParseJson(self::SEARCH_STATION_URI . $query);
 
         return StationCollection::fromArray($data, new StationMapper);
     }
@@ -67,7 +67,7 @@ class Sl implements PublicTransportSystem {
      */
     public function departuresFrom(Station $station)
     {
-        $data = $this->httpClient()->sendRequest(self::DEPARTURES_FROM_URI . $station->id());
+        $data = $this->httpClient()->getAndParseJson(self::DEPARTURES_FROM_URI . $station->id());
 
         return DepartureCollection::fromArray($data, new DepartureMapper);
     }
