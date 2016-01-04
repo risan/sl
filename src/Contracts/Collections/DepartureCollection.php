@@ -2,11 +2,13 @@
 
 namespace Sl\Contracts\Collections;
 
-interface DepartureCollection {
+interface DepartureCollection
+{
     /**
      * Filter by departure's type.
      *
-     * @param  string $type
+     * @param string $type
+     *
      * @return Sl\Contracts\Collections\DepartureCollection
      */
     public function type($type);

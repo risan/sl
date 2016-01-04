@@ -4,7 +4,8 @@ namespace Sl;
 
 use Sl\Contracts\Foundation\Station as StationInterface;
 
-class Station implements StationInterface {
+class Station implements StationInterface
+{
     /**
      * Station's id.
      *
@@ -22,8 +23,8 @@ class Station implements StationInterface {
     /**
      * Create a new instance of Station.
      *
-     * @param int $id
-     * @param String $name
+     * @param int    $id
+     * @param string $name
      */
     public function __construct($id, $name = null)
     {

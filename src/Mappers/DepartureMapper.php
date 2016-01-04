@@ -3,7 +3,6 @@
 namespace Sl\Mappers;
 
 use Sl\Departure;
-use Carbon\Carbon;
 use Sl\Contracts\Mapper;
 
 class DepartureMapper implements Mapper
@@ -11,7 +10,8 @@ class DepartureMapper implements Mapper
     /**
      * Map data to array of object instance.
      *
-     * @param  array  $data
+     * @param array $data
+     *
      * @return array
      */
     public function map(array $data)
@@ -36,7 +36,8 @@ class DepartureMapper implements Mapper
     /**
      * Busses group departures.
      *
-     * @param  array  $data
+     * @param array $data
+     *
      * @return array
      */
     private function busses(array $data)
@@ -47,7 +48,8 @@ class DepartureMapper implements Mapper
     /**
      * Trains group departures.
      *
-     * @param  array  $data
+     * @param array $data
+     *
      * @return array
      */
     private function trains(array $data)
@@ -58,7 +60,8 @@ class DepartureMapper implements Mapper
     /**
      * Metros group departures.
      *
-     * @param  array  $data
+     * @param array $data
+     *
      * @return array
      */
     private function metros(array $data)
@@ -75,7 +78,8 @@ class DepartureMapper implements Mapper
     /**
      * Trams group departures.
      *
-     * @param  array  $data
+     * @param array $data
+     *
      * @return array
      */
     private function trams(array $data)
@@ -95,7 +99,8 @@ class DepartureMapper implements Mapper
     /**
      * Light rails group departures.
      *
-     * @param  array  $data
+     * @param array $data
+     *
      * @return array
      */
     private function lightRails(array $data)
@@ -115,7 +120,8 @@ class DepartureMapper implements Mapper
     /**
      * Ships group departures.
      *
-     * @param  array  $data
+     * @param array $data
+     *
      * @return array
      */
     private function ships(array $data)
@@ -126,9 +132,10 @@ class DepartureMapper implements Mapper
     /**
      * Map groups departures.
      *
-     * @param  array  $data
-     * @param  string $type
-     * @param  string $subType
+     * @param array  $data
+     * @param string $type
+     * @param string $subType
+     *
      * @return array
      */
     private function mapGroups(array $groups, $type, $subType)
@@ -152,14 +159,15 @@ class DepartureMapper implements Mapper
     /**
      * Create departures array.
      *
-     * @param  array  $items
-     * @param  string $type
-     * @param  string $subType
+     * @param array  $items
+     * @param string $type
+     * @param string $subType
+     *
      * @return array
      */
     private function createDepartures(array $items, $type, $subType)
     {
-        return array_map(function($departure) use($type, $subType) {
+        return array_map(function ($departure) use ($type, $subType) {
             return new Departure(
                 $departure['LineNumber'],
                 $type,

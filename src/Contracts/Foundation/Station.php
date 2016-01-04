@@ -2,7 +2,8 @@
 
 namespace Sl\Contracts\Foundation;
 
-interface Station {
+interface Station
+{
     /**
      * Get station's id.
      *

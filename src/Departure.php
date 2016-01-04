@@ -4,7 +4,8 @@ namespace Sl;
 
 use Sl\Contracts\Foundation\Departure as DepartureInterface;
 
-class Departure implements DepartureInterface {
+class Departure implements DepartureInterface
+{
     /**
      * Departure's id.
      *
@@ -43,11 +44,11 @@ class Departure implements DepartureInterface {
     /**
      * Create a new instance of Departure.
      *
-     * @param string $id
-     * @param string $type
+     * @param string      $id
+     * @param string      $type
      * @param string|null $subType
-     * @param string $destination
-     * @param string $displayTime
+     * @param string      $destination
+     * @param string      $displayTime
      */
     public function __construct($id, $type, $subType, $destination, $displayTime)
     {

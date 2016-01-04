@@ -2,11 +2,13 @@
 
 namespace Sl\Contracts;
 
-interface Mapper {
+interface Mapper
+{
     /**
      * Map data to array of object instance.
      *
-     * @param  array  $data
+     * @param array $data
+     *
      * @return array
      */
     public function map(array $data);

@@ -4,7 +4,8 @@ namespace Sl\Contracts;
 
 use Psr\Http\Message\ResponseInterface;
 
-interface HttpClient {
+interface HttpClient
+{
     /**
      * Get base uri.
      *
@@ -16,6 +17,7 @@ interface HttpClient {
      * Send HTTP GET request.
      *
      * @param string $uri
+     *
      * @return Psr\Http\Message\ResponseInterface
      */
     public function get($uri);
@@ -23,7 +25,8 @@ interface HttpClient {
     /**
      * Parse JSON response.
      *
-     * @param  Psr\Http\Message\ResponseInterface $response
+     * @param Psr\Http\Message\ResponseInterface $response
+     *
      * @return array
      */
     public function parseJsonResponse(ResponseInterface $response);
@@ -32,6 +35,7 @@ interface HttpClient {
      * Send HTTP GET request and JSON response.
      *
      * @param string $uri
+     *
      * @return array
      */
     public function getAndParseJson($uri);

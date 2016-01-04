@@ -6,7 +6,8 @@ use GuzzleHttp\Client as Guzzle;
 use Psr\Http\Message\ResponseInterface;
 use Sl\Contracts\HttpClient as HttpClientInterface;
 
-class HttpClient extends Guzzle implements HttpClientInterface {
+class HttpClient extends Guzzle implements HttpClientInterface
+{
     /**
      * Base uri.
      *
@@ -31,8 +32,8 @@ class HttpClient extends Guzzle implements HttpClientInterface {
                 'Accept-Language' => 'en-US',
                 'Host' => 'sl.se',
                 'Referer' => 'http://sl.se/',
-                'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36'
-            ]
+                'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36',
+            ],
         ]);
     }
 
@@ -46,10 +47,11 @@ class HttpClient extends Guzzle implements HttpClientInterface {
         return $this->baseUri;
     }
 
-     /**
+    /**
      * Send HTTP GET request.
      *
      * @param string $uri
+     *
      * @return Psr\Http\Message\ResponseInterface
      */
     public function get($uri)
@@ -60,7 +62,8 @@ class HttpClient extends Guzzle implements HttpClientInterface {
     /**
      * Parse JSON response.
      *
-     * @param  Psr\Http\Message\ResponseInterface $response
+     * @param Psr\Http\Message\ResponseInterface $response
+     *
      * @return array
      */
     public function parseJsonResponse(ResponseInterface $response)
@@ -72,6 +75,7 @@ class HttpClient extends Guzzle implements HttpClientInterface {
      * Send HTTP GET request and JSON response.
      *
      * @param string $uri
+     *
      * @return array
      */
     public function getAndParseJson($uri)

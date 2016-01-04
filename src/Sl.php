@@ -9,7 +9,8 @@ use Sl\Collections\StationCollection;
 use Sl\Collections\DepartureCollection;
 use Sl\Contracts\PublicTransportSystem;
 
-class Sl implements PublicTransportSystem {
+class Sl implements PublicTransportSystem
+{
     /**
      * Sl Http API base uri.
      */
@@ -49,26 +50,28 @@ class Sl implements PublicTransportSystem {
     /**
      * Search for station.
      *
-     * @param  string $query
+     * @param string $query
+     *
      * @return Sl\Contracts\Collections\StationCollection
      */
     public function searchStation($query)
     {
-        $data = $this->httpClient()->getAndParseJson(self::SEARCH_STATION_URI . $query);
+        $data = $this->httpClient()->getAndParseJson(self::SEARCH_STATION_URI.$query);
 
-        return StationCollection::fromArray($data, new StationMapper);
+        return StationCollection::fromArray($data, new StationMapper());
     }
 
     /**
      * Get departures from station.
      *
-     * @param  Sl\Contracts\Foundation\Station $station
+     * @param Sl\Contracts\Foundation\Station $station
+     *
      * @return Sl\Contracts\Collections\DepartureCollection
      */
     public function departuresFrom(Station $station)
     {
-        $data = $this->httpClient()->getAndParseJson(self::DEPARTURES_FROM_URI . $station->id());
+        $data = $this->httpClient()->getAndParseJson(self::DEPARTURES_FROM_URI.$station->id());
 
-        return DepartureCollection::fromArray($data, new DepartureMapper);
+        return DepartureCollection::fromArray($data, new DepartureMapper());
     }
 }
