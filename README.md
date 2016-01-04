@@ -2,6 +2,7 @@
 
 [![Build Status](https://img.shields.io/travis/risan/sl.svg?style=flat-square)](https://travis-ci.org/risan/sl)
 [![HHVM Tested](https://img.shields.io/hhvm/risan/sl.svg?style=flat-square)](https://travis-ci.org/risan/sl)
+[![StyleCI](https://styleci.io/repos/48139068/shield?style=flat-square)](https://styleci.io/repos/48139068)
 [![Latest Stable Version](https://img.shields.io/packagist/v/risan/sl.svg?style=flat-square)](https://packagist.org/packages/risan/sl)
 [![License](https://img.shields.io/packagist/l/risan/sl.svg?style=flat-square)](https://packagist.org/packages/risan/sl)
 
