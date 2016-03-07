@@ -29,7 +29,7 @@ class Sl implements PublicTransportSystem
     /**
      * Http client instance.
      *
-     * @var \Sl\Contracts\HttpClient.
+     * @var \Sl\Contracts\HttpClient
      */
     private $httpClient;
 
