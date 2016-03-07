@@ -52,7 +52,7 @@ class HttpClient extends Guzzle implements HttpClientInterface
      *
      * @param string $uri
      *
-     * @return Psr\Http\Message\ResponseInterface
+     * @return \Psr\Http\Message\ResponseInterface
      */
     public function get($uri)
     {
@@ -62,7 +62,7 @@ class HttpClient extends Guzzle implements HttpClientInterface
     /**
      * Parse JSON response.
      *
-     * @param Psr\Http\Message\ResponseInterface $response
+     * @param \Psr\Http\Message\ResponseInterface $response
      *
      * @return array
      */

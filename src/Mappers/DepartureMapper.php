@@ -132,7 +132,7 @@ class DepartureMapper implements Mapper
     /**
      * Map groups departures.
      *
-     * @param array  $data
+     * @param array  $groups
      * @param string $type
      * @param string $subType
      *

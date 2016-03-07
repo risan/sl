@@ -18,14 +18,14 @@ interface HttpClient
      *
      * @param string $uri
      *
-     * @return Psr\Http\Message\ResponseInterface
+     * @return \Psr\Http\Message\ResponseInterface
      */
     public function get($uri);
 
     /**
      * Parse JSON response.
      *
-     * @param Psr\Http\Message\ResponseInterface $response
+     * @param \Psr\Http\Message\ResponseInterface $response
      *
      * @return array
      */

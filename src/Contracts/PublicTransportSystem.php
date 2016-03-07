@@ -11,16 +11,16 @@ interface PublicTransportSystem
      *
      * @param string $query
      *
-     * @return Sl\Contracts\Collections\StationCollection
+     * @return \Sl\Contracts\Collections\StationCollection
      */
     public function searchStation($query);
 
     /**
      * Get departures from station.
      *
-     * @param Sl\Contracts\Foundation\Station $station
+     * @param \Sl\Contracts\Foundation\Station $station
      *
-     * @return Sl\Contracts\Collections\DepartureCollection
+     * @return \Sl\Contracts\Collections\DepartureCollection
      */
     public function departuresFrom(Station $station);
 }

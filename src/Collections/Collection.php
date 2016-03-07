@@ -11,10 +11,10 @@ class Collection extends BaseCollection implements CollectionInterface
     /**
      * Create from raw array data.
      *
-     * @param array               $items
-     * @param Sl\Contracts\Mapper $mapper
+     * @param array                $items
+     * @param \Sl\Contracts\Mapper $mapper
      *
-     * @return Sl\Contracts\Collections\Collection
+     * @return \Sl\Contracts\Collections\Collection
      */
     public static function fromArray(array $items, Mapper $mapper)
     {

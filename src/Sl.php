@@ -29,14 +29,14 @@ class Sl implements PublicTransportSystem
     /**
      * Http client instance.
      *
-     * @var Sl\Contracts\HttpClient.
+     * @var \Sl\Contracts\HttpClient.
      */
     private $httpClient;
 
     /**
      * Get Http client instance.
      *
-     * @return Sl\Contracts\HttpClient
+     * @return \Sl\Contracts\HttpClient
      */
     public function httpClient()
     {
@@ -52,7 +52,7 @@ class Sl implements PublicTransportSystem
      *
      * @param string $query
      *
-     * @return Sl\Contracts\Collections\StationCollection
+     * @return \Sl\Contracts\Collections\StationCollection
      */
     public function searchStation($query)
     {
@@ -64,9 +64,9 @@ class Sl implements PublicTransportSystem
     /**
      * Get departures from station.
      *
-     * @param Sl\Contracts\Foundation\Station $station
+     * @param \Sl\Contracts\Foundation\Station $station
      *
-     * @return Sl\Contracts\Collections\DepartureCollection
+     * @return \Sl\Contracts\Collections\DepartureCollection
      */
     public function departuresFrom(Station $station)
     {
