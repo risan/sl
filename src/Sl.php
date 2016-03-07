@@ -4,10 +4,10 @@ namespace Sl;
 
 use Sl\Mappers\StationMapper;
 use Sl\Mappers\DepartureMapper;
-use Sl\Contracts\Foundation\Station;
 use Sl\Collections\StationCollection;
 use Sl\Collections\DepartureCollection;
 use Sl\Contracts\PublicTransportSystem;
+use Sl\Contracts\Foundation\Station as StationContract;
 
 class Sl implements PublicTransportSystem
 {
@@ -68,7 +68,7 @@ class Sl implements PublicTransportSystem
      *
      * @return \Sl\Contracts\Collections\DepartureCollection
      */
-    public function departuresFrom(Station $station)
+    public function departuresFrom(StationContract $station)
     {
         $data = $this->httpClient()->getAndParseJson(self::DEPARTURES_FROM_URI.$station->id());
 

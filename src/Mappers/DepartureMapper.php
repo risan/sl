@@ -84,16 +84,7 @@ class DepartureMapper implements Mapper
      */
     private function trams(array $data)
     {
-        $trams = [];
-
-        foreach ($data['TranCityTypes'] as $type) {
-            $trams = array_merge(
-                $trams,
-                $this->mapGroups($type['TramGroups'], 'tram', $type['GroupId'])
-            );
-        }
-
-        return $trams;
+        return $this->mapTramTypes($data['TranCityTypes'], 'tram');
     }
 
     /**
@@ -105,16 +96,29 @@ class DepartureMapper implements Mapper
      */
     private function lightRails(array $data)
     {
-        $lightRails = [];
+        return $this->mapTramTypes($data['TramTypes'], 'light rail');
+    }
 
-        foreach ($data['TramTypes'] as $type) {
-            $lightRails = array_merge(
-                $lightRails,
-                $this->mapGroups($type['TramGroups'], 'light rail', $type['GroupId'])
+    /**
+     * Map tram group departures.
+     *
+     * @param array  $types
+     * @param string $tramType
+     *
+     * @return array
+     */
+    private function mapTramTypes(array $types, $tramType)
+    {
+        $trams = [];
+
+        foreach ($types as $type) {
+            $trams = array_merge(
+                $trams,
+                $this->mapGroups($type['TramGroups'], $tramType, $type['GroupId'])
             );
         }
 
-        return $lightRails;
+        return $trams;
     }
 
     /**

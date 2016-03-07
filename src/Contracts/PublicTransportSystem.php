@@ -2,7 +2,7 @@
 
 namespace Sl\Contracts;
 
-use Sl\Contracts\Foundation\Station;
+use Sl\Contracts\Foundation\Station as StationContract;
 
 interface PublicTransportSystem
 {
@@ -22,5 +22,5 @@ interface PublicTransportSystem
      *
      * @return \Sl\Contracts\Collections\DepartureCollection
      */
-    public function departuresFrom(Station $station);
+    public function departuresFrom(StationContract $station);
 }
