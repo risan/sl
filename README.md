@@ -1,10 +1,12 @@
 # Stockholm Pulic Transport
 
-[![Build Status](https://img.shields.io/travis/risan/sl.svg?style=flat-square)](https://travis-ci.org/risan/sl)
-[![HHVM Tested](https://img.shields.io/hhvm/risan/sl.svg?style=flat-square)](https://travis-ci.org/risan/sl)
-[![StyleCI](https://styleci.io/repos/48139068/shield?style=flat-square)](https://styleci.io/repos/48139068)
-[![Latest Stable Version](https://img.shields.io/packagist/v/risan/sl.svg?style=flat-square)](https://packagist.org/packages/risan/sl)
-[![License](https://img.shields.io/packagist/l/risan/sl.svg?style=flat-square)](https://packagist.org/packages/risan/sl)
+[![Build Status](https://travis-ci.org/risan/sl.svg?branch=master)](https://travis-ci.org/risan/sl)
+[![HHVM Status](http://hhvm.h4cc.de/badge/risan/sl.svg?style=flat)](http://hhvm.h4cc.de/package/risan/sl)
+[![StyleCI](https://styleci.io/repos/48139068/shield?style=flat)](https://styleci.io/repos/48139068)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/risan/sl/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/risan/sl/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/risan/sl/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/risan/sl/?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/risan/sl/v/stable)](https://packagist.org/packages/risan/sl)
+[![License](https://poser.pugx.org/risan/sl/license)](https://packagist.org/packages/risan/sl)
 
 PHP HTTP client library for communicating with [sl.se](http://sl.se/)—a Stockholm public transportation website.
 
