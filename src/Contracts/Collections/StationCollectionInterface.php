@@ -2,6 +2,6 @@
 
 namespace Sl\Contracts\Collections;
 
-interface StationCollection
+interface StationCollectionInterface
 {
 }

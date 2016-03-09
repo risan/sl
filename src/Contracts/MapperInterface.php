@@ -2,7 +2,7 @@
 
 namespace Sl\Contracts;
 
-interface Mapper
+interface MapperInterface
 {
     /**
      * Map data to array of object instance.

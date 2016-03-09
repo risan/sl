@@ -2,7 +2,7 @@
 
 namespace Sl;
 
-use Sl\Contracts\Foundation\Departure as DepartureInterface;
+use Sl\Contracts\Foundation\DepartureInterface;
 
 class Departure implements DepartureInterface
 {

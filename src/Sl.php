@@ -6,10 +6,10 @@ use Sl\Mappers\StationMapper;
 use Sl\Mappers\DepartureMapper;
 use Sl\Collections\StationCollection;
 use Sl\Collections\DepartureCollection;
-use Sl\Contracts\PublicTransportSystem;
-use Sl\Contracts\Foundation\Station as StationContract;
+use Sl\Contracts\PublicTransportSystemInterface;
+use Sl\Contracts\Foundation\StationInterface;
 
-class Sl implements PublicTransportSystem
+class Sl implements PublicTransportSystemInterface
 {
     /**
      * Sl Http API base uri.
@@ -29,14 +29,14 @@ class Sl implements PublicTransportSystem
     /**
      * Http client instance.
      *
-     * @var \Sl\Contracts\HttpClient
+     * @var \Sl\Contracts\HttpClientInterface
      */
     private $httpClient;
 
     /**
      * Get Http client instance.
      *
-     * @return \Sl\Contracts\HttpClient
+     * @return \Sl\Contracts\HttpClientInterface
      */
     public function httpClient()
     {
@@ -52,7 +52,7 @@ class Sl implements PublicTransportSystem
      *
      * @param string $query
      *
-     * @return \Sl\Contracts\Collections\StationCollection
+     * @return \Sl\Contracts\Collections\StationCollectionInterface
      */
     public function searchStation($query)
     {
@@ -64,11 +64,11 @@ class Sl implements PublicTransportSystem
     /**
      * Get departures from station.
      *
-     * @param \Sl\Contracts\Foundation\Station $station
+     * @param \Sl\Contracts\Foundation\StationInterface $station
      *
-     * @return \Sl\Contracts\Collections\DepartureCollection
+     * @return \Sl\Contracts\Collections\DepartureCollectionInterface
      */
-    public function departuresFrom(StationContract $station)
+    public function departuresFrom(StationInterface $station)
     {
         $data = $this->httpClient()->getAndParseJson(self::DEPARTURES_FROM_URI.$station->id());
 

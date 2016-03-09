@@ -2,9 +2,9 @@
 
 namespace Sl\Collections;
 
-use Sl\Contracts\Mapper;
+use Sl\Contracts\MapperInterface;
 use Illuminate\Support\Collection as BaseCollection;
-use Sl\Contracts\Collections\Collection as CollectionInterface;
+use Sl\Contracts\Collections\CollectionInterface;
 
 class Collection extends BaseCollection implements CollectionInterface
 {
@@ -12,11 +12,11 @@ class Collection extends BaseCollection implements CollectionInterface
      * Create from raw array data.
      *
      * @param array                $items
-     * @param \Sl\Contracts\Mapper $mapper
+     * @param \Sl\Contracts\MapperInterface $mapper
      *
-     * @return \Sl\Contracts\Collections\Collection
+     * @return \Sl\Contracts\Collections\CollectionInterface
      */
-    public static function fromArray(array $items, Mapper $mapper)
+    public static function fromArray(array $items, MapperInterface $mapper)
     {
         return new static($mapper->map($items));
     }

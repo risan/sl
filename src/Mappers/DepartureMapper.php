@@ -3,9 +3,9 @@
 namespace Sl\Mappers;
 
 use Sl\Departure;
-use Sl\Contracts\Mapper;
+use Sl\Contracts\MapperInterface;
 
-class DepartureMapper implements Mapper
+class DepartureMapper implements MapperInterface
 {
     /**
      * Map data to array of object instance.

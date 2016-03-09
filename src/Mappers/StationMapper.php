@@ -3,9 +3,9 @@
 namespace Sl\Mappers;
 
 use Sl\Station;
-use Sl\Contracts\Mapper;
+use Sl\Contracts\MapperInterface;
 
-class StationMapper implements Mapper
+class StationMapper implements MapperInterface
 {
     /**
      * Map data to array of object instance.

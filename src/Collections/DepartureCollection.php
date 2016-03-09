@@ -2,7 +2,7 @@
 
 namespace Sl\Collections;
 
-use Sl\Contracts\Collections\DepartureCollection as DepartureCollectionInterface;
+use Sl\Contracts\Collections\DepartureCollectionInterface;
 
 class DepartureCollection extends Collection implements DepartureCollectionInterface
 {
@@ -11,7 +11,7 @@ class DepartureCollection extends Collection implements DepartureCollectionInter
      *
      * @param string $type
      *
-     * @return \Sl\Contracts\Collections\DepartureCollection
+     * @return \Sl\Contracts\Collections\DepartureCollectionInterface
      */
     public function type($type)
     {
@@ -23,7 +23,7 @@ class DepartureCollection extends Collection implements DepartureCollectionInter
     /**
      * Busses group departures.
      *
-     * @return \Sl\Contracts\Collections\DepartureCollection
+     * @return \Sl\Contracts\Collections\DepartureCollectionInterface
      */
     public function busses()
     {
@@ -33,7 +33,7 @@ class DepartureCollection extends Collection implements DepartureCollectionInter
     /**
      * Trains group departures.
      *
-     * @return \Sl\Contracts\Collections\DepartureCollection
+     * @return \Sl\Contracts\Collections\DepartureCollectionInterface
      */
     public function trains()
     {
@@ -43,7 +43,7 @@ class DepartureCollection extends Collection implements DepartureCollectionInter
     /**
      * Metros group departures.
      *
-     * @return \Sl\Contracts\Collections\DepartureCollection
+     * @return \Sl\Contracts\Collections\DepartureCollectionInterface
      */
     public function metros()
     {
@@ -53,7 +53,7 @@ class DepartureCollection extends Collection implements DepartureCollectionInter
     /**
      * Trams group departures.
      *
-     * @return \Sl\Contracts\Collections\DepartureCollection
+     * @return \Sl\Contracts\Collections\DepartureCollectionInterface
      */
     public function trams()
     {
@@ -63,7 +63,7 @@ class DepartureCollection extends Collection implements DepartureCollectionInter
     /**
      * Light rails group departures.
      *
-     * @return \Sl\Contracts\Collections\DepartureCollection
+     * @return \Sl\Contracts\Collections\DepartureCollectionInterface
      */
     public function lightRails()
     {
@@ -73,7 +73,7 @@ class DepartureCollection extends Collection implements DepartureCollectionInter
     /**
      * Ships group departures.
      *
-     * @return \Sl\Contracts\Collections\DepartureCollection
+     * @return \Sl\Contracts\Collections\DepartureCollectionInterface
      */
     public function ships()
     {

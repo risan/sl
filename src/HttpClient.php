@@ -4,9 +4,9 @@ namespace Sl;
 
 use GuzzleHttp\Client as Guzzle;
 use Psr\Http\Message\ResponseInterface;
-use Sl\Contracts\HttpClient as HttpClientContract;
+use Sl\Contracts\HttpClientInterface;
 
-class HttpClient extends Guzzle implements HttpClientContract
+class HttpClient extends Guzzle implements HttpClientInterface
 {
     /**
      * Base uri.

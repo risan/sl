@@ -2,7 +2,7 @@
 
 namespace Sl\Contracts\Foundation;
 
-interface Departure
+interface DepartureInterface
 {
     /**
      * Get departure's id.

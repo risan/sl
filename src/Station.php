@@ -2,7 +2,7 @@
 
 namespace Sl;
 
-use Sl\Contracts\Foundation\Station as StationInterface;
+use Sl\Contracts\Foundation\StationInterface;
 
 class Station implements StationInterface
 {
