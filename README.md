@@ -5,6 +5,7 @@
 [![StyleCI](https://styleci.io/repos/48139068/shield?style=flat)](https://styleci.io/repos/48139068)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/risan/sl/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/risan/sl/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/risan/sl/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/risan/sl/?branch=master)
+[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/0363c9d1-17ec-475c-bef4-9d7e889d77b3.svg)](https://insight.sensiolabs.com/projects/0363c9d1-17ec-475c-bef4-9d7e889d77b3)
 [![Latest Stable Version](https://poser.pugx.org/risan/sl/v/stable)](https://packagist.org/packages/risan/sl)
 [![License](https://poser.pugx.org/risan/sl/license)](https://packagist.org/packages/risan/sl)
 
@@ -45,7 +46,7 @@ Or you may also add `risan\sl` package into your `composer.json` file like so:
 
 ```bash
 "require": {
-  "risan/sl": "~1.0"
+  "risan/sl": "~1.1"
 }
 ```
 
