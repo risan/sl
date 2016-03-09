@@ -2,6 +2,7 @@
 
 namespace Sl\Collections;
 
+use Sl\Contracts\Foundation\DepartureInterface;
 use Sl\Contracts\Collections\DepartureCollectionInterface;
 
 class DepartureCollection extends Collection implements DepartureCollectionInterface
@@ -15,7 +16,7 @@ class DepartureCollection extends Collection implements DepartureCollectionInter
      */
     public function type($type)
     {
-        return $this->filter(function ($departure) use ($type) {
+        return $this->filter(function (DepartureInterface $departure) use ($type) {
             return $departure->type() === $type;
         });
     }
