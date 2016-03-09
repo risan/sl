@@ -9,7 +9,7 @@ interface CollectionInterface
     /**
      * Create from raw array data.
      *
-     * @param array                $items
+     * @param array                         $items
      * @param \Sl\Contracts\MapperInterface $mapper
      *
      * @return \Sl\Contracts\Collections\CollectionInterface
