@@ -1,8 +1,8 @@
 <?php
 
 use Sl\Collections\Collection;
-use Sl\Contracts\Mapper as MapperInterface;
-use Sl\Contracts\Collections\Collection as CollectionInterface;
+use Sl\Contracts\MapperInterface;
+use Sl\Contracts\Collections\CollectionInterface;
 
 class CollectionTest extends PHPUnit_Framework_TestCase {
     protected $rawArray;

@@ -1,7 +1,7 @@
 <?php
 
 use Sl\Mappers\DepartureMapper;
-use Sl\Contracts\Foundation\Departure as DepartureInterface;
+use Sl\Contracts\Foundation\DepartureInterface;
 
 class DepartureMapperTest extends PHPUnit_Framework_TestCase {
     protected $departureMapper;

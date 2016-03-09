@@ -1,9 +1,9 @@
 <?php
 
 use Sl\Departure;
+use Sl\Contracts\MapperInterface;
 use Sl\Collections\DepartureCollection;
-use Sl\Contracts\Mapper as MapperInterface;
-use Sl\Contracts\Collections\DepartureCollection as DepartureCollectionInterface;
+use Sl\Contracts\Collections\DepartureCollectionInterface;
 
 class DepartureCollectionTest extends PHPUnit_Framework_TestCase {
     protected $arrayDepartures;

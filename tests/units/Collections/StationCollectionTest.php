@@ -1,9 +1,9 @@
 <?php
 
 use Sl\Station;
+use Sl\Contracts\MapperInterface;
 use Sl\Collections\StationCollection;
-use Sl\Contracts\Mapper as MapperInterface;
-use Sl\Contracts\Collections\StationCollection as StationCollectionInterface;
+use Sl\Contracts\Collections\StationCollectionInterface;
 
 class StationCollectionTest extends PHPUnit_Framework_TestCase {
     protected $arrayStations;

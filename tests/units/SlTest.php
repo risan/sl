@@ -2,10 +2,10 @@
 
 use Sl\Sl;
 use Sl\Station;
-use Sl\Contracts\Foundation\Station as StationInterface;
-use Sl\Contracts\Foundation\Departure as DepartureInterface;
-use Sl\Contracts\Collections\StationCollection as StationCollectionInterface;
-use Sl\Contracts\Collections\DepartureCollection as DepartureCollectionInterface;
+use Sl\Contracts\Foundation\StationInterface;
+use Sl\Contracts\Foundation\DepartureInterface;
+use Sl\Contracts\Collections\StationCollectionInterface;
+use Sl\Contracts\Collections\DepartureCollectionInterface;
 
 class SlTest extends PHPUnit_Framework_TestCase {
     protected $sl;

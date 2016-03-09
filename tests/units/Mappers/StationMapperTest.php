@@ -1,7 +1,7 @@
 <?php
 
 use Sl\Mappers\StationMapper;
-use Sl\Contracts\Foundation\Station as StationInterface;
+use Sl\Contracts\Foundation\StationInterface;
 
 class StationMapperTest extends PHPUnit_Framework_TestCase {
     protected $stationMapper;
